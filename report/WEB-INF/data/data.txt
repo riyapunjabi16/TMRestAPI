@@ -1,0 +1,6 @@
+'x':228|'y':132|'value':name
+'x':331|'y':228|'value':fatherName
+'x':338|'y':314|'value':motherName
+'x':856|'y':142|'value':email
+'x':971|'y':214|'value':contactNumber
+'x':932|'y':301|'value':dob

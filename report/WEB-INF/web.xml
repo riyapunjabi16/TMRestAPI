@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+  version="4.0"
+  metadata-complete="true">
+
+<servlet>
+<servlet-name>Startup</servlet-name>
+<servlet-class>tm.Startup</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<url-pattern>/startup</url-pattern>
+<servlet-name>Startup</servlet-name>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Report</servlet-name>
+<servlet-class>tm.Report</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<url-pattern>/reported</url-pattern>
+<servlet-name>Report</servlet-name>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Reported</servlet-name>
+<servlet-class>tm.Reported</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<url-pattern>/download</url-pattern>
+<servlet-name>Reported</servlet-name>
+</servlet-mapping>
+
+
+</web-app>

@@ -1,0 +1,47 @@
+ <!Doctype html>
+<head>
+<title>Reporting</title>
+<script src="../jq/jquery-3.4.1.min.js"></script>
+<style type="text/css">
+#myDiv 
+{
+background-image: url('http://localhost:8080/report/startup?');
+background-repeat:no-repeat;
+background-size:contain;
+height:546px;width:1511px;
+}
+</style>
+</head>
+<body>
+<div id="myDiv">
+</div>
+<button id="reported" onclick="reported()">Submit</button>
+<script>
+var myList="";
+var myDiv=document.getElementById("myDiv");
+myDiv.ondblclick=function(event){
+var x=event.clientX;
+var y=event.clientY;
+//console.log(x,y);
+var box=document.createElement('input');
+box.style.position='absolute';
+box.draggable=true;
+box.style.left=x+'px';
+box.style.top=y+'px'; 
+//console.log(box.style.left,box.style.top); 
+myDiv.appendChild(box);
+box.focus();
+box.onchange=function(event){
+var item="{'x':"+x+"|'y':"+y+"|'value':"+event.target.value+"}";
+myList+=item;
+};
+};
+function reported()
+{
+$.post("reported",{data:myList},function(data){
+window.location.href='http://localhost:8080/report/success.html';
+});
+};
+</script>
+</body>
+</html>
